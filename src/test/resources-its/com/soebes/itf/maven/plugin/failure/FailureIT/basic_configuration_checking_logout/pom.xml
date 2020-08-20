@@ -22,18 +22,32 @@ under the License.
 <project>
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>com.soebes.smpp</groupId>
+    <artifactId>smpp</artifactId>
+    <version>5.3.1</version>
+  </parent>
+
   <groupId>com.soebes.itf.maven.plugin.its</groupId>
-  <artifactId>basic_configuration</artifactId>
+  <artifactId>basic_configuration_checking_logout</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
   <name>ITF Part II#basic_configuration_checking logoutput</name>
   <description>The build should be successful.</description>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>com.soebes.itf.examples.part.ii</groupId>
